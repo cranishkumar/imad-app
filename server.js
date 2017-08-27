@@ -10,7 +10,11 @@ app.get('/', function (req, res) {
 });
 
 app.get('/article.one', function (req, res) {
-  res.sendFile('This is article.one as you requested');
+  res.send('This is articl one served as you requested');
+});
+
+app.get('/article.two', function (req, res) {
+  res.send('This is article two served as you requested');
 });
 
 app.get('/ui/style.css', function (req, res) {
