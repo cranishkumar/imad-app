@@ -37,7 +37,7 @@ var articles = {
 },
     'articleThree': {
     title: 'Article one | Anish Kumar',
-    heading: 'Article One',
+    heading: 'Article Three',
     date: 'Sep 5, 2017',
     content: ` 
         <p>
@@ -50,7 +50,7 @@ var articles = {
 }
 };
 function createTemplate(data) {
-    var title=  data.title;
+    var title =  data.title;
     var heading = data.heading;
     var date = data.date;
     var content = data.content;
