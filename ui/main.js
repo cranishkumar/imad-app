@@ -9,5 +9,5 @@ element.innerHTML = 'New Value';
 var img = document.getElementById('madi');
 
 img.onclick = function() {
-    var interval = setInterval(mioveLeft, 100);
+    var interval = setInterval(moveLeft, 100);
 };
