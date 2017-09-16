@@ -38,7 +38,7 @@ button.onclick = function(){
             span.innerHTML = counter.toString();
          }
      } 
-    }
+    };
     //Make a request
     request.open = ('GET','http://cranishkumar.imad.hasura-app.io/counter', true);
     request.send(null);
