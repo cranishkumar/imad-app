@@ -7,7 +7,7 @@ element.innerHTML = 'New Value';
 
 //Move the image littele right
 var img = document.getElementById('madi');
-function(){
+function mveRight(){
     marginLeft = marginLeft + 10;
     img.style.marginLeft = marginLeft + px;
 }
