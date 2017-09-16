@@ -41,5 +41,5 @@ button.onclick = function(){
     };
     //Make a request
     request.open = ('GET','http://cranishkumar.imad.hasura-app.io/counter', true);
-    //request.send(null);
-}
+    request.send(null);
+};
