@@ -1,11 +1,11 @@
-console.log('Loaded!');
+//console.log('Loaded!');
 
 //change the text of the main text division
 //var element = document.getElementById('main-text');
 
 //element.innerHTML = 'New Value';
 
-//Move the image littele right
+/* Move the image littele right
 var img = document.getElementById('madi');
 var marginLeft = 0;
 function moveRight(){
@@ -15,3 +15,11 @@ function moveRight(){
 img.onclick = function() {
     var interval = setInterval(moveRight, 50);
 };
+*/
+
+var button = document.getElementById('counter');
+button.onclick = function(){
+    couner = counter + 1;
+    var span = document.getElementById('count');
+    span.innerHTML = toString(counter);
+}
