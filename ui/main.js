@@ -47,7 +47,7 @@ button.onclick = function(){
 //submit name
 var nameInput = document.getElementById('name');
 var name = nameInput.value;
-var submit = document.getElementById('submit-btn');
+var submit = document.getElementById('submit_btn');
 submit.onclick = function () {
     //Capture a list f name and render it as a list 
     var names = ['name1', 'name2', 'name3', 'name4'];
