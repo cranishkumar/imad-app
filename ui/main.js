@@ -67,7 +67,7 @@ submit.onclick = function () {
         ul.innerHTML = list;
          }
       }
-    }
+    };
     //Make a request to the server and send the name
     
     //submit name
