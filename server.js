@@ -127,6 +127,7 @@ app.get('/submit-name', function (req, res) { //submit-name?name-xxx
   res.send(JSON.stringify(names));
 });
 
+var pool = new Pool(config);
 app.get('/articles/:articleName', function (req, res) {
   pool.query("SELECT * FROM article WHERE title = '" + req.params.articleName + "'", function (err, result) {
       if (err) {
