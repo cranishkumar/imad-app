@@ -122,12 +122,13 @@ app.post('/create-user', function(req, res) {
     var salt = crypto.random.Bytes(128).toString('hex');
     var dbString = hash(password, salt);
     pool.guery('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, dbString], function (err, result) {
-             if (err){
+        if (err){
           res.status(500).send(err.toString());
-      } else {
-          res.send("user successfully created" + username);
-      } 
+        } else {
+          res.send('user successfully created:' + username);
+        }
     });
+});
 
 app.post('/login', function(req, res) {
     var username = req.body.username;
@@ -184,7 +185,7 @@ app.get('/submit-name', function (req, res) { //submit-name?name-xxx
   res.send(JSON.stringify(names));
 });
 
-var pool = new Pool(config);
+//var pool = new Pool(config);
 app.get('/articles/:articleName', function (req, res) {
   pool.query("SELECT * FROM article WHERE title = '" + req.params.articleName + "'", function (err, result) {
       if (err) {
