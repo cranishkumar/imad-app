@@ -31,17 +31,14 @@ submit.onclick = function () {
       if (request.readyState === XMLHttpRequest.DONE) {
          //Take some action
          if (request.status === 200) {
-            var names = request.responseText;
-            names = JSON.parse(names);
-            var list = '';
-            for (var i = 0; i<name.length; i++){
-                list += '<li>' + names[i] + '</li>';
-            }
-        var ul = document.getElementById('namelist');
-        ul.innerHTML = list;
-         }
+             alert("Logged in successfully");
+         } else if (request.status === 403) {
+             alert("Wrong credentials");
+         } else if (request.status === 500) {
+             alert("something went wrong");
       }
-    };
+    }
+};
     //Make a request to the server and send the name
     
     //submit name
