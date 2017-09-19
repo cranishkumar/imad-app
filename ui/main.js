@@ -17,7 +17,7 @@ img.onclick = function() {
 };
 */
 
-
+//submit username, password to login
 
 var submit = document.getElementById('submit_btn');
 submit.onclick = function () {
@@ -45,10 +45,11 @@ submit.onclick = function () {
     //Make a request to the server and send the name
     
     //submit name
-    var nameInput = document.getElementById('name');
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
     var name = nameInput.value;
-    request.open('GET','http://cranishkumar.imad.hasura-app.io/submit-name?name=' + name, true);
-    request.send(null);
+    request.open('POST','http://cranishkumar.imad.hasura-app.io/submit-name?name=' + name, true);
+    request.send(JSON.stringify({username: username, password: password}));
 };
 
 
