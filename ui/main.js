@@ -47,8 +47,9 @@ submit.onclick = function () {
     //submit name
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
-    var name = nameInput.value;
-    request.open('POST','http://cranishkumar.imad.hasura-app.io/submit-name?name=' + name, true);
+    console.log(username);
+    console.log(password);
+    request.open('POST','http://cranishkumar.imad.hasura-app.io/login=' + name, true);
     request.send(JSON.stringify({username: username, password: password}));
 };
 
