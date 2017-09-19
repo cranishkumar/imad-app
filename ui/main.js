@@ -47,7 +47,7 @@ submit.onclick = function () {
     console.log(username);
     console.log(password);
     request.open('POST','http://cranishkumar.imad.hasura-app.io/login=' + name, true);
-    request.set.Request.Header('Content-Type', 'application/json');
+    request.set.RequestHeader('Content-Type', 'application/json');
     request.send(JSON.stringify({username: username, password: password}));
 };
 
