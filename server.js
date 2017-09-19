@@ -99,8 +99,8 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+//we need a hash
 function hash(input, salt) {
-    // we need a hash
     //How do we create a hasg
     var hashed = crypto.pdkdf2Sync(input, salt, 10000, 512, 'sha512');
     return hashed.toString('hex');
