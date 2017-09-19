@@ -117,7 +117,7 @@ app.post('/create-user', function(req, res) {
     //JSON
     var username = req.body.username;
     var password = req.body.password;
-    var salt = crypto.getRandom.Bytes(128).toString('hex');
+    var salt = crypto.random.Bytes(128).toString('hex');
     var dbString = hash(password, salt);
     pool.guery('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, dbString], function (err, result) {
              if (err){
