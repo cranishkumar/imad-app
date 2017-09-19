@@ -127,7 +127,32 @@ app.post('/create-user', function(req, res) {
           res.send("user successfully created" + username);
       } 
     });
+
+app.post('/login', function(req, res) {
+    var username = req.body.username;
+    var password = req.body.password;
+    pool.guery('SELECT * FROM "user" WHERE username =$1', [username], function (err, result) {
+             if (err){
+          res.status(500).send(err.toString());
+      } else {
+          if (result.rows.length === 0) {
+              res.send(403).send('username/password is invaalid');
+          } else {
+              //Match the password
+              var dbstring = result.rows[0].password;
+              var salt = dbstring.split('$')[2];
+              var hashedPassword = hash(password, salt);//Creating a hash based on the password submitted and the original salt
+              if (hashedPassword === dbstring) {
+                  res.send('Credentials correct!');
+              } else {
+                  res.send(403).send('username/password is invalid');
+              }
+          }      
+          res.send("user successfully created" + username);
+      } 
+    });
 });
+
 
 var pool = new Pool(config);
 app.get('/test-db', function(req, res){
