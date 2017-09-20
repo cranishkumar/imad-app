@@ -152,7 +152,6 @@ app.post('/login', function (req, res) {
               var salt = dbstring.split('$')[2];
               var hashedPassword = hash(password, salt);//Creating a hash based on the password submitted and the original salt
               if (hashedPassword === dbstring) {
-                  
                   // set the session
                   req.session.auth = {userId: result.rows[0].Id};
                   // set cookie with a session id
