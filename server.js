@@ -22,7 +22,7 @@ app.use(session ({
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}
 }));
 
-
+/*
 var articles =
     'article-One': {
     title: 'Article one | Anish Kumar',
@@ -102,7 +102,7 @@ function createTemplate(data) {
     ;
 return htmlTemplate;
 } 
-
+*/
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
